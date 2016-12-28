@@ -1,0 +1,37 @@
+<!--Messages-->
+<hr />
+<div class="alert alert-info" ng-show="isBusy">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>Cargando</strong> Obteniendo datos del servidor ...
+</div>
+<div class="alert alert-danger" ng-show="error">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>Error {{error.status}}</strong> {{error.statusText}}
+</div>
+
+<div ng-show="!isBusy">
+    <a href="#!/main" class="btn btn-primary">Nueva Búsqueda</a>
+    <hr />
+</div>
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{user.name}}</h3>
+    </div>
+    <div class="panel-body">
+        <img ng-src="{{user.avatar_url}}" style="height: 50px;width: auto" alt="{{uer.name}}">
+    </div>
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="repo in user.repos | orderBy:'language'">
+        <span class="badge">{{repo.language}}</span>
+
+        <h4 class="list-group-item-heading">
+            <a href="#!/user/{{user.login}}/{{repo.name}}">{{repo.name}}</a>
+        </h4>
+        <p class="list-group-item-text">Creado: {{repo.created_at | date}}</p>
+        <p class="list-group-item-text">
+            <a class="btn btn-sm btn-info" href="{{repo.html_url}}" target="_blank" role="button">Ir al repositorio</a>
+        </p>
+    </li>
+</ul>
+</div>

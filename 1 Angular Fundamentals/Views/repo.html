@@ -1,0 +1,31 @@
+<!--Messages-->
+<a href="#!/user/{{repo.owner.login}}" class="btn btn-success">Volver</a>
+
+<hr />
+<div class="alert alert-info" ng-show="isBusy">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>Cargando</strong> Obteniendo datos del servidor ...
+</div>
+<div class="alert alert-danger" ng-show="error">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>Error {{error.status}}</strong> {{error.statusText}}
+</div>
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{repo.name}}</h3>
+    </div>
+    <div class="panel-body">
+        <p>Open issues count: {{repo.open_issues_count}}</p>
+    </div>
+
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="contributor in repo.contributors">
+        <h4 class="list-group-item-heading">
+            <a href="{{contributor.html_url}}" target="_blank">{{contributor.login}}</a>
+        </h4>
+        <img ng-src="{{contributor.avatar_url}}" style="height: 50px; width: auto;" alt="Photo of {{contributor.login}}">
+    </li>
+</ul>
+
+

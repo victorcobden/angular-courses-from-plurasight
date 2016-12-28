@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="AngularApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Angular</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="Public/js/app.js"></script>
+    <script src="Public/js/MainController.js"></script>
+    <script src="Public/js/UserController.js"></script>
+    <script src="Public/js/RepoController.js"></script>
+    <script src="Public/js/github.js"></script>
+</head>
+
+<body ng-cloak>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="page-header text-center">
+                    <h1>GitHub Viewer<small> <br /> By Victor</small></h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
